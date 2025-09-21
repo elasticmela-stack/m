@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>You've Got a Meow!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #ffe4f0;
+      text-align: center;
+      padding: 70px;
+    }
+
+    .screen {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+
+    img.cat {
+      width: 300px;
+      border-radius: 50%;
+      margin-top: 40px;
+    }
+
+    h1, h2 {
+      color: #ff69b4;
+    }
+
+    .btn {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .option {
+      background-color: #fff;
+      border: 2px dashed #ff69b4;
+      border-radius: 15px;
+      padding: 20px;
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .option:hover {
+      transform: scale(1.05);
+    }
+
+    .letter, .audio {
+      margin-top: 20px;
+    }
+
+    .paw-btn {
+      font-size: 10em;
+      background: none;
+      border: 3px dashed #ff69b4;
+      cursor: pointer;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen 1: Welcome -->
+  <div id="screen1" class="screen active">
+    <img src="https://i.pinimg.com/736x/2d/b1/b3/2db1b36504810d382166d236ce9ea1a3.jpg" alt="Pink Cat" class="cat" />
+    <h1>Hi!💗😻</h1>
+    <button class="btn" onclick="showScreen('screen2')">Next</button>
+  </div>
+
+  <!-- Screen 2: Message Options -->
+  <div id="screen2" class="screen">
+    <h2>YOU HAVE A MESSAGE💖</h2>
+    <div class="options">
+      <div class="option" onclick="showScreen('screenEnvelope')">📩 Envelope </div>
+      <div class="option" onclick="showScreen('screenAudio')">🎵 Audio Playlist </div>
+      <div class="option" onclick="showScreen('screenNextTime')">😿 Next Time</div>
+    </div>
+  </div>
+
+  <!-- Screen 3: Envelope -->
+  <div id="screenEnvelope" class="screen">
+    <h2>ENVELOPE</h2>
+    <p>Click here</p>
+    <button class="paw-btn" onclick="showLetter()">🐾</button><br>
+    <div id="letterMessage" class="letter" style="display:none; background-color: #fffef0; background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png'); padding: 30px; border-radius: 20px; border: 2px solid #ff69b4; box-shadow: 0 0 15px rgba(255, 105, 180, 0.2); font-family: Georgia, serif; color: #4b2e2e; font-size: 1.4em; max-width: 700px; margin: 20px auto;">
+
+      <p><strong>"Dear Miraskiii,"<strong><p><br>
+      <p>I'm not sure where to start with this, as it's my first time doing such things. However, I wanted to say that you trigger my ventral tegmental area and caudate nucleus.</p>
+      <p>You're purrfect just the way you are!🐱💌</p><br>
+      <p><strong>"Love, M"<strong><p>
+    </div>
+    
+     <button class="btn" onclick="showScreen('screen2')">Home</button>
+  </div>
+
+<!-- Screen 4: Audio Playlist -->
+<div id="screenAudio" class="screen">
+  <h2>Audio Playlist</h2>
+  <div style="display: flex; overflow-x: auto; gap: 30px; padding: 20px; scroll-snap-type: x mandatory;">
+    <div style="flex: 0 0 auto; scroll-snap-align: center; background: linear-gradient(135deg, #ffcce6, #fff0f5); border-radius: 25px; padding: 20px; width: 300px; box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);">
+      <p style="font-size: 1.2em; font-weight: bold; color: #d63384;">🎶 Naiilang – Le John</p>
+      <audio controls src="file:///C:/Users/Marissa%20Cortez/OneDrive/Desktop/html%20code/Le%20John%20-%20Naiilang%20(Official%20Music%20Video).mp3" style="width: 100%; border-radius: 10px;"></audio>
+    </div>
+
+    <div style="flex: 0 0 auto; scroll-snap-align: center; background: linear-gradient(135deg, #ffcce6, #fff0f5); border-radius: 25px; padding: 20px; width: 300px; box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);">
+      <p style="font-size: 1.2em; font-weight: bold; color: #d63384;">🎶 Autumn – Ben&Ben</p>
+      <audio controls src="file:///C:/Users/Marissa%20Cortez/OneDrive/Desktop/html%20code/Le%20John%20-%20Naiilang%20(Official%20Music%20Video).mp3" style="width: 100%; border-radius: 10px;"></audio>
+    </div>
+
+    <div style="flex: 0 0 auto; scroll-snap-align: center; background: linear-gradient(135deg, #ffcce6, #fff0f5); border-radius: 25px; padding: 20px; width: 300px; box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);">
+      <p style="font-size: 1.2em; font-weight: bold; color: #d63384;">🎶 Dalangin – Earl Agustin</p>
+      <audio controls src="file:///C:/Users/Marissa%20Cortez/OneDrive/Desktop/html%20code/Dalangin%20-%20Earl%20Agustin%20(Performance%20Video).mp3" style="width: 100%; border-radius: 10px;"></audio>
+    </div>
+
+    <div style="flex: 0 0 auto; scroll-snap-align: center; background: linear-gradient(135deg, #ffcce6, #fff0f5); border-radius: 25px; padding: 20px; width: 300px; box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);">
+      <p style="font-size: 1.2em; font-weight: bold; color: #d63384;">🎶 Tibok – Earl Agustin</p>
+      <audio controls src="file:///C:/Users/Marissa%20Cortez/OneDrive/Desktop/html%20code/Tibok%20-%20Earl%20Agustin%20(AshBin%20Version%20Music%20Video).mp3" style="width: 100%; border-radius: 10px;"></audio>
+    </div>
+  </div>
+  <button class="btn" onclick="showScreen('screen2')">Home</button>
+</div>
+
+  <!-- Screen 5: Next Time -->
+  <div id="screenNextTime" class="screen">
+    <h2>Next Time 😿</h2>
+    <p>It's okay! Come back when you're ready 💗</p><br>
+    <p>HAYSSS!!!!😾😾😾🙄</p>
+    <button class="btn" onclick="showScreen('screen2')">Home</button>
+  </div>
+
+  <script>
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function showLetter() {
+      document.getElementById('letterMessage').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
